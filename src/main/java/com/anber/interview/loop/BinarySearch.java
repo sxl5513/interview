@@ -11,11 +11,11 @@ public class BinarySearch {
         int b = arr.length;
 
         while (a < b) {
-            int m = a + (a - b) / 2;
+            int m = a + (b - a) / 2;
             if (k < arr[m]) {
                 b = m;
             } else if (k > arr[m]) {
-                a = m;
+                a = m + 1;
             } else {
                 return m;
             }
@@ -24,6 +24,27 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
+        BinarySearch search = new BinarySearch();
+        System.out.println(search.binarySearch(new int[]{1, 2, 10, 15, 100}, 15));
+        System.out.println(search.binarySearch(new int[]{1, 2, 10, 15, 100}, -2));
+
+        System.out.println(search.binarySearch(new int[]{1, 2, 10, 15, 100}, 101));
+
+        System.out.println(search.binarySearch(new int[]{1, 2, 10, 15, 100}, 13));
+
+        System.out.println("======");
+
+        System.out.println(search.binarySearch(new int[]{}, 13));
+
+        System.out.println(search.binarySearch(new int[]{12}, 13));
+
+        System.out.println(search.binarySearch(new int[]{13}, 13));
+
+        System.out.println("======");
+
+        System.out.println(search.binarySearch(new int[]{12, 13}, 12));
+
+        System.out.println(search.binarySearch(new int[]{12, 13}, 13));
 
     }
 }
