@@ -30,5 +30,8 @@ public class LinkedListReverser {
         LinkedListReverser reverser = new LinkedListReverser();
         Node.printLinkedList(reverser.reverseLinkedList(
                 creator.createLinkedList(Arrays.asList(1,2,3,4,5))));
+
+        reverser.reverseLinkedList(creator.createLargeLinkedList(100000));
+        System.out.println("done");
     }
 }
