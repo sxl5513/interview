@@ -6,19 +6,19 @@ package com.anber.interview.tree;
  * @author anber
  **/
 public class TreeNode {
-    private final String value;
+    private final char value;
 
     private TreeNode left;
 
     private TreeNode right;
 
-    public TreeNode(String value) {
+    public TreeNode(char value) {
         this.value = value;
         this.left = null;
         this.right = null;
     }
 
-    public String getValue() {
+    public char getValue() {
         return value;
     }
 
