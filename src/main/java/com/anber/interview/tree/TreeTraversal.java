@@ -74,5 +74,20 @@ public class TreeTraversal {
         traversal.postOrder(creator.createTree("AB", "BA"));
         System.out.println();
 
+
+        System.out.println("===========");
+
+        System.out.println(creator.postTree("ABDEGCF", "DBGEACF"));
+        System.out.println();
+
+        System.out.println(creator.postTree("", ""));
+        System.out.println();
+
+        System.out.println(creator.postTree("A", "A"));
+        System.out.println();
+
+        System.out.println(creator.postTree("AB", "BA"));
+        System.out.println();
+
     }
 }

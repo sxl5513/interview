@@ -40,4 +40,17 @@ public class TreeCreator {
 
         return root;
     }
+
+    public String postTree(String preOrder, String inOrder) {
+        if (preOrder.isEmpty()) {
+            return "";
+        }
+
+        char rootValue = preOrder.charAt(0);
+        int rootIndex = inOrder.indexOf(rootValue);
+
+        return postTree(preOrder.substring(1, 1 + rootIndex), inOrder.substring(0, rootIndex)) +
+                postTree(preOrder.substring(1 + rootIndex), inOrder.substring(1 + rootIndex)) +
+                rootValue;
+    }
 }
