@@ -30,7 +30,10 @@ public class TreeNode {
 
     public void setLeft(TreeNode left) {
         this.left = left;
-        this.left.setParent(this);
+        if (this.left != null) {
+            this.left.setParent(this);
+        }
+
     }
 
     public TreeNode getRight() {
@@ -39,7 +42,9 @@ public class TreeNode {
 
     public void setRight(TreeNode right) {
         this.right = right;
-        this.right.setParent(this);
+        if (this.right != null) {
+            this.right.setParent(this);
+        }
     }
 
     public TreeNode getParent() {

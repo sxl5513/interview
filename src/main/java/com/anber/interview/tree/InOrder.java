@@ -14,14 +14,14 @@ public class InOrder {
             return first(node.getRight());
         } else {
             while (node.getParent() != null &&
-                    node.getParent().getLeft() != null){
+                    node.getParent().getLeft() != node){
                 node = node.getParent();
             }
             return node.getParent();
         }
     }
 
-    private TreeNode first(TreeNode node) {
+    public TreeNode first(TreeNode node) {
         if (node == null) {
             return null;
         }
@@ -33,6 +33,14 @@ public class InOrder {
     }
 
     public static void main(String[] args) {
+        TreeCreator creator = new TreeCreator();
+        InOrder inOrder = new InOrder();
 
+        TreeNode simpleTree = creator.createSimpleTree();
+
+        for (TreeNode node = inOrder.first(simpleTree); node != null; node = inOrder.next(node)) {
+            System.out.print(node.getValue());
+        }
+        System.out.println();
     }
 }
